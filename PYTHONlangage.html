@@ -1,0 +1,1085 @@
+<HTML>
+<BODY> 
+
+<HR> 
+<H1 align=CENTER > Documentation technique PYTHON : Les bass </H1> 
+<HR> 
+
+<TABLE width=90% border=1 align=center>
+ 
+<TR> 
+<TD align=CENTER> <H4> Code Python </H4> </TD> 
+<TD align=CENTER> <H4> Resultat   </H4> </TD> 
+</TR>
+
+<TR> <TD align=LEFT> <PRE>  
+ print("-"*25)
+ print(" Hello world "*2) 
+ print("-"*25) 
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python HelloWorld.py
+------------------------
+Hello world Hello world
+------------------------
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE>  
+print("-"*30)
+print(" String concatnation Examples ") 
+print("-"*30)
+print("1 jour  : " + str(24*60) + " minutes" )
+print("1 jour  : " + str(24*60*60) + " secondes" )
+
+# En python 3 : utilisation format
+print(f"1 heure : {40*60} secondes" )
+print("-"*30)
+</PRE> </TD>  <TD align=LEFT> <PRE>
+  ------------------------------
+   String concatnation Examples
+  ------------------------------
+  1 jour  : 1440 minutes
+  1 jour  : 86400 secondes
+  1 heure : 2400 secondes
+  ------------------------------
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE>  
+print("-"*30)
+print(" Variable typée dynamiquement  ") 
+print("-"*30)
+
+Nb_Secondes_Par_Jour= 24 * 60*60 
+
+# En python 3 : utilisation format
+print(f"1 jour  : {Nb_Secondes_Par_Jour} secondes" )
+print(f"2 jours : {2 * Nb_Secondes_Par_Jour} secondes" )
+print("-"*30)
+
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python Variables.py
+------------------------------
+ Variable typée dynamiquement
+------------------------------
+1 jour  : 86400 secondes
+2 jours : 172800 secondes
+------------------------------
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*30)
+print(" Fonctions en python  ") 
+print("-"*30)
+
+Nb_Secondes_Par_Jour= 24 * 60*60
+
+
+def calcul_sec_jour():
+    print(f"1 jour  : {Nb_Secondes_Par_Jour} secondes" ) 
+    print("-"*30)
+
+
+calcul_sec_jour()
+
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python Functions.py
+------------------------------
+ Fonctions en python
+------------------------------
+1 jour  : 86400 secondes
+------------------------------
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*30)
+print(" Fonctions en python avec paramètre ") 
+print("-"*30)
+
+Nb_Secondes_Par_Jour= 24 * 60*60
+
+
+def calcul_sec_jour(nb_jours):
+    print(f"{nb_jours} jours  : {nb_jours * Nb_Secondes_Par_Jour} secondes" ) 
+    print("-"*30)
+
+
+calcul_sec_jour(1)
+calcul_sec_jour(2)
+calcul_sec_jour(3)
+</PRE> </TD>  <TD align=LEFT> <PRE>
+------------------------------
+ Fonctions en python avec paramètre
+------------------------------
+1 jours  : 86400 secondes
+------------------------------
+2 jours  : 172800 secondes
+------------------------------
+3 jours  : 259200 secondes
+------------------------------
+</PRE></TD> </TR>
+
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Fonctions en python avec 3 paramètres ") 
+print("-"*40)
+
+Nb_Secondes_Par_Jour= 24 * 60*60
+
+
+def calcul_sec_jour(nb_jours,jour_langue,second_langue):
+    print(f"{nb_jours} {jour_langue}  : {nb_jours * Nb_Secondes_Par_Jour} {second_langue}" ) 
+    print("-"*30)
+
+
+calcul_sec_jour(1,"jour","secondes")
+calcul_sec_jour(2,"day","seconds")
+</PRE> </TD>  <TD align=LEFT> <PRE>
+----------------------------------------
+ Fonctions en python avec 3 paramètres
+----------------------------------------
+1 jour  : 86400 secondes
+------------------------------
+2 day  : 172800 seconds
+------------------------------
+</PRE></TD> </TR>
+
+	
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Fonctions variable globale et local ") 
+print("-"*40)
+
+Globale1 = "Globale1"
+Globale2 = "Globale2"
+
+def affiche():
+    print(f"Globale1 dans fonction affiche : {Globale1} " ) 
+    Globale2="Globale2updatelocal"
+    print(f"Globale2 dans fonction affiche : {Globale2} " ) 
+
+affiche()
+print(f"Globale2 dans programme principale : {Globale2} " ) 
+</PRE> </TD>  <TD align=LEFT> <PRE>
+----------------------------------------
+ Fonctions variable globale et local
+----------------------------------------
+Globale1 dans fonction affiche : Globale1
+Globale2 dans fonction affiche : Globale2updatelocal
+Globale2 dans programme principale : Globale2
+</PRE></TD> </TR>
+
+
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Fonctions et input  ") 
+print("-"*40)
+
+Nb_Secondes_Par_Jour= 24 * 60*60
+
+
+def calcul_sec_jour(nb_jours,jour_langue,second_langue):
+    print(f"{nb_jours} {jour_langue}  : {nb_jours * Nb_Secondes_Par_Jour} {second_langue}" ) 
+    print("-"*30)
+
+valeur_entree = input("Entrer le nombre de jour : \n")
+calcul_sec_jour(int(valeur_entree),"jour","secondes")
+calcul_sec_jour(int(valeur_entree),"day","seconds")
+	
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python input.py
+----------------------------------------
+ Fonctions et input
+----------------------------------------
+Entrer le nombre de jour :
+5
+5 jour  : 432000 secondes
+------------------------------
+5 day  : 432000 seconds
+------------------------------
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Fonctions et procedure  ") 
+print("-"*40)
+
+Nb_Secondes_Par_Jour= 24 * 60*60
+
+def procedure_calcul_sec_jour(nb_jours,jour_langue,second_langue):
+    print(f"procedure {nb_jours} {jour_langue}  : {nb_jours * Nb_Secondes_Par_Jour} {second_langue}" ) 
+    print("-"*30)
+
+
+def fonction_calcul_sec_jour(nb_jours,jour_langue,second_langue):
+    return f"fonction {nb_jours} {jour_langue}  : {nb_jours * Nb_Secondes_Par_Jour} {second_langue}" 
+    
+valeur_entree = input("Entrer le nombre de jour : \n")
+#Casting string vers int : int(valeur_entree)
+procedure_calcul_sec_jour(int(valeur_entree),"jour","secondes")
+
+resultat_fonction = fonction_calcul_sec_jour(int(valeur_entree),"jour","secondes")
+print(f"{resultat_fonction}")
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python input.py
+----------------------------------------
+ Fonctions et procedure
+----------------------------------------
+Entrer le nombre de jour :
+4
+procedure 4 jour  : 345600 secondes
+------------------------------
+fonction 4 jour  : 345600 secondes
+</PRE></TD> </TR>
+
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Fonctions et test input ") 
+print(" input doit etre un entier positif : isdigit ") 
+print("-"*40)
+
+Nb_Secondes_Par_Jour= 24 * 60*60
+
+def procedure_calcul_sec_jour(nb_jours,jour_langue,second_langue):
+    #print(nb_jours > 0)       # renvoie True or False
+    #print(type(nb_jours > 0)) # <class 'bool'>
+    if nb_jours > 0:
+        print(f"procedure {nb_jours} {jour_langue}  : {nb_jours * Nb_Secondes_Par_Jour} {second_langue}" ) 
+        print("-"*30)
+    elif nb_jours == 0:
+        print(f"L entree ne doit pas être nulle : {nb_jours} invalide entrée ")
+    else:
+        print(f"L entree doit être un entier positif : {nb_jours} invalide entrée ")
+
+valeur_entree = input("Entrer le nombre de jour : \n")
+if valeur_entree.isdigit():
+    #Casting string vers int : int(valeur_entree)
+    procedure_calcul_sec_jour(int(valeur_entree),"jour(s)","secondes")
+else:
+     print(f"L entree doit être un entier positif : {valeur_entree} invalide entrée ")
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python ConditionIF.py
+----------------------------------------
+ Fonctions et test input
+ input doit etre un entier positif
+----------------------------------------
+Entrer le nombre de jour :
+test
+L entree doit être un entier positif : test invalide entrée
+
+----------------------------------------
+ Fonctions et test input
+ input doit etre un entier positif
+----------------------------------------
+Entrer le nombre de jour :
+2.5
+L entree doit être un entier positif : 2.5 invalide entrée
+
+
+----------------------------------------
+ Fonctions et test input
+ input doit etre un entier positif
+----------------------------------------
+Entrer le nombre de jour :
+0
+L entree ne doit pas être nulle : 0 invalide entrée
+
+----------------------------------------
+ Fonctions et test input
+ input doit etre un entier positif
+----------------------------------------
+Entrer le nombre de jour :
+5
+procedure 5 jour(s)  : 432000 secondes
+------------------------------
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Fonctions et test input ") 
+print(" input doit etre un entier positif : Try and Except ValueError")	 
+print("-"*40)
+
+Nb_Secondes_Par_Jour= 24 * 60*60
+
+
+def check_execute():
+    if valeur_entree.isdigit():
+        procedure_calcul_sec_jour(int(valeur_entree),"jour(s)","secondes")
+    else:
+        print(f"L entree doit être un entier positif : {valeur_entree} invalide entrée ")
+     
+     
+def procedure_calcul_sec_jour(nb_jours,jour_langue,second_langue):
+    #print(nb_jours > 0)       # renvoie True or False
+    #print(type(nb_jours > 0)) # <class 'bool'>
+    if nb_jours > 0:
+        print(f"procedure {nb_jours} {jour_langue}  : {nb_jours * Nb_Secondes_Par_Jour} {second_langue}" ) 
+        print("-"*30)
+    elif nb_jours == 0:
+        print(f"L entree ne doit pas être nulle : {nb_jours} invalide entrée ")
+    else:
+        print(f"L entree doit être un entier positif : {nb_jours} invalide entrée ")
+
+#programme principal
+valeur_entree = input("Entrer le nombre de jour : \n")
+check_execute()
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python ConditionIF2.py
+----------------------------------------
+ Fonctions et test input
+ input doit etre un entier positif : isdigit
+----------------------------------------
+Entrer le nombre de jour :
+-4
+L entree doit être un entier positif : -4 invalide entrée
+
+D:\INDEX\PYTHON\Exemples>python ConditionIF2.py
+----------------------------------------
+ Fonctions et test input
+ input doit etre un entier positif : isdigit
+----------------------------------------
+Entrer le nombre de jour :
+5
+procedure 5 jour(s)  : 432000 secondes
+------------------------------
+</PRE></TD> </TR>
+
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Fonctions et test input ") 
+print(" input doit etre un entier positif : isdigit ") 
+print("-"*40)
+
+Nb_Secondes_Par_Jour= 24 * 60*60
+
+def check_execute():
+    try:
+        valeur_entree_number = int(valeur_entree) 
+        if valeur_entree_number > 0:
+            print(f"{valeur_entree_number} jour(s) : {valeur_entree_number * Nb_Secondes_Par_Jour} seconde(s)" ) 
+            print("-"*30)
+        elif valeur_entree_number == 0:
+            print(f"L entree ne doit pas être nulle : {valeur_entree_number} invalide entrée ")
+    except ValueError:
+        print(f"L entree doit être un entier positif ")
+     
+#programme principal
+valeur_entree = input("Entrer le nombre de jour : \n")
+check_execute() 
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python Try_Except.py
+----------------------------------------
+ Fonctions et test input
+ input doit etre un entier positif : isdigit
+----------------------------------------
+Entrer le nombre de jour :
+4
+4 jour(s) : 345600 seconde(s)
+------------------------------
+
+D:\INDEX\PYTHON\Exemples>python Try_Except.py
+----------------------------------------
+ Fonctions et test input
+ input doit etre un entier positif : isdigit
+----------------------------------------
+Entrer le nombre de jour :
+dd
+L entree doit être un entier positif
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Loop While ") 
+print("-"*40)
+
+Nb_Secondes_Par_Jour= 24 * 60*60
+
+def check_execute():
+    try:
+        valeur_entree_number = int(valeur_entree) 
+        if valeur_entree_number > 0:
+            print(f"{valeur_entree_number} jour(s) : {valeur_entree_number * Nb_Secondes_Par_Jour} seconde(s)" ) 
+            print("-"*30)
+        elif valeur_entree_number == 0:
+            print(f"L entree ne doit pas être nulle : {valeur_entree_number} invalide entrée ")
+    except ValueError:
+        print(f"L entree doit être un entier positif ")
+     
+#programme principal
+while True:
+    valeur_entree = input("Entrer le nombre de jour : \n")
+    check_execute() 
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python LoopWHILE.py
+----------------------------------------
+ Loop While
+----------------------------------------
+Entrer le nombre de jour :
+2
+2 jour(s) : 172800 seconde(s)
+------------------------------
+Entrer le nombre de jour :
+s
+L entree doit être un entier positif
+Entrer le nombre de jour :
+5
+5 jour(s) : 432000 seconde(s)
+------------------------------
+Entrer le nombre de jour :
+</PRE></TD> </TR>
+
+	
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Loop While ") 
+print("-"*40)
+
+Nb_Secondes_Par_Jour= 24 * 60*60
+
+def check_execute():
+    try:
+        valeur_entree_number = int(valeur_entree) 
+        if valeur_entree_number > 0:
+            print(f"{valeur_entree_number} jour(s) : {valeur_entree_number * Nb_Secondes_Par_Jour} seconde(s)" ) 
+            print("-"*30)
+        elif valeur_entree_number == 0:
+            print(f"L entree ne doit pas être nulle : {valeur_entree_number} invalide entrée ")
+    except ValueError:
+        print(f"L entree doit être un entier positif ")
+     
+#programme principal
+valeur_entree = "Debut"
+while valeur_entree != "exit":
+    valeur_entree = input("Entrer le nombre de jour : \n")
+    check_execute() 
+	
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python LoopWHILE.py
+----------------------------------------
+ Loop While
+----------------------------------------
+Entrer le nombre de jour :
+dd
+L entree doit être un entier positif
+Entrer le nombre de jour :
+55
+55 jour(s) : 4752000 seconde(s)
+------------------------------
+Entrer le nombre de jour :
+exit
+L entree doit être un entier positif
+</PRE></TD> </TR>
+
+	
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Les Listes : [] et boucle FOR ")
+print(" Transformer un sting en list : .split ") 
+print(f"10 20 30\".split() donne [10,20,30] ") 
+print("-"*40)
+
+Nb_Secondes_Par_Jour= 24 * 60*60
+
+def check_execute():
+    try:
+        valeur_entree_number = int(nb_jour) 
+        if valeur_entree_number > 0:
+            print(f"{valeur_entree_number} jour(s) : {valeur_entree_number * Nb_Secondes_Par_Jour} seconde(s)" ) 
+            print("-"*30)
+        elif valeur_entree_number == 0:
+            print(f"L entree ne doit pas être nulle : {valeur_entree_number} invalide entrée ")
+    except ValueError:
+        print(f"L entree doit être un entier positif ")
+    
+#programme principal
+valeur_entree = "Debut"
+while valeur_entree != "exit":
+    valeur_entree = input("Entrer les nombre de jour séparés par une virgule : \n")
+    for nb_jour in valeur_entree.split(","):
+        print(f"Traitement de {nb_jour} ")
+        check_execute() 
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python liste.py
+----------------------------------------
+ Les Listes : [] et boucle FOR
+ Transformer un sting en list : .split
+10 20 30".split() donne [10,20,30]
+----------------------------------------
+Entrer les nombre de jour séparés par une virgule :
+10,5,8,41,85
+Traitement de 10
+10 jour(s) : 864000 seconde(s)
+------------------------------
+Traitement de 5
+5 jour(s) : 432000 seconde(s)
+------------------------------
+Traitement de 8
+8 jour(s) : 691200 seconde(s)
+------------------------------
+Traitement de 41
+41 jour(s) : 3542400 seconde(s)
+------------------------------
+Traitement de 85
+85 jour(s) : 7344000 seconde(s)
+------------------------------
+Entrer les nombre de jour séparés par une virgule :
+exit
+Traitement de exit
+L entree doit être un entier positif
+</PRE></TD> </TR>
+
+	
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Les Listes : []  ")
+print(" Transformer un sting en list : .split ") 
+print(f"10 20 30\".split() donne [10,20,30] ") 
+print("-"*40)
+"""Commentaires sur plusieurs lignes 
+ajout d un element dans une liste 
+et ajout d'une liste dans une liste""" 
+
+list_mois=["janvier","fervier","mars","avril","mai"]
+list_mois.append("juin") 
+list_mois.append("juillet") 
+list_mois.append("aout")
+list_mois+=["septembre","octobre","novembre","decembre"] 
+
+print(list_mois)
+print(f"3eme element de la liste = indice 2 liste_mois[2]: {list_mois[2]} ")
+
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python liste2.py
+----------------------------------------
+ Les Listes : []
+ Transformer un sting en list : .split
+10 20 30".split() donne [10,20,30]
+----------------------------------------
+['janvier', 'fervier', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'decembre']
+3eme element de la liste = indice 2 liste_mois[2]: mars
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Un Set : une liste de valeurs qui n accepte pas les doublons ")
+print(" La fonction set permet de transformer une liste en Set ")
+# une liste est contenu dans { } 
+# Affichage liste_mois : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+# Affichage set(liste_mois) : {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+
+print("-"*40)
+"""Commentaires sur plusieurs lignes 
+ajout d un element dans une liste 
+et ajout d'une liste dans une liste""" 
+
+list_mois=[1,2,3,4,5,6,7,8,9,10,11,12]
+list_mois+=list_mois 
+
+print(f"Affichage liste_mois : {list_mois}")
+print(f"Affichage set(list_mois) : {set(list_mois)}")
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python Set.py
+----------------------------------------
+ Un Set : une liste de valeurs qui n accepte pas les doublons
+ La fonction set permet de transformer une liste en Set
+----------------------------------------
+Affichage liste_mois : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+Affichage set(list_mois) : {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Un Set : une liste de valeurs qui n accepte pas les doublons ")
+print(" La fonction set permet de transformer une liste en Set ")
+print(" Il n y a pas d ordre déterminé dans un set")
+print(" Pas d indice de type [0] dans un set")
+print(" un element ne peut pas etre changer , seulement ajouter ou supprimer")
+
+print("-"*40)
+ 
+
+set_mois={1,2,3,4,5,6,7,8,9,10,11}
+print(f"set_mois : {set_mois} ") 
+for mois in set_mois:
+    print(f"Mois : {mois}") 
+
+print(" Ajout du mois 12 par set_mois.add ")
+set_mois.add(12) 
+print(f"set_mois : {set_mois} ") 
+
+set_lettre={"a","b","c","d","e","f","g","i","j"}
+print(set_lettre) 
+set_lettre.add("k")
+print(set_lettre)
+
+print("Suppression de la lettre d" )
+set_lettre.remove("d") 
+print(set_lettre)
+
+print(f"SET TO LIST list(set_lettre) : {list(set_lettre)} ")
+
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python Set2.py
+----------------------------------------
+ Un Set : une liste de valeurs qui n accepte pas les doublons
+ La fonction set permet de transformer une liste en Set
+ Il n y a pas d ordre déterminé dans un set
+ Pas d indice de type [0] dans un set
+ un element ne peut pas etre changer , seulement ajouter ou supprimer
+----------------------------------------
+set_mois : {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+Mois : 1
+Mois : 2
+Mois : 3
+Mois : 4
+Mois : 5
+Mois : 6
+Mois : 7
+Mois : 8
+Mois : 9
+Mois : 10
+Mois : 11
+ Ajout du mois 12 par set_mois.add
+set_mois : {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+{'e', 'd', 'b', 'g', 'i', 'j', 'a', 'c', 'f'}
+{'e', 'd', 'b', 'g', 'i', 'j', 'k', 'a', 'c', 'f'}
+Suppression de la lettre d
+{'e', 'b', 'g', 'i', 'j', 'k', 'a', 'c', 'f'}
+SET TO LIST list(set_lettre) : ['g', 'b', 'k', 'c', 'e', 'j', 'a', 'f', 'i']
+</PRE></TD> </TR>
+
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Fonction Built-In  ")
+print(" Les fonctions du type objet.fonction sont liés au datatype de Objet  ")
+print(" Built_in fonction spécifique au type de datas") 
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python BuitIn_Function.py
+----------------------------------------
+ Fonction Built-In
+ Les fonctions du type objet.fonction sont liés au datatype de Objet
+ Built_in fonction spécifique au type de datas
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Données de type Dictionary   ")
+print(" Une sorte de Set KEY:VALUE  ") 
+print(' exemple  { "Jours":20 ,  "Unite":"heure" } ')
+print(" .... ") 
+
+while True: 
+    dict_entree=input("Entrer le nombre de jour et l unite exemple 20:heure : \n")
+    Jour_Unit = dict_entree.split(":") 
+
+    print(f"Jour_Unit : {Jour_Unit}") 
+    Jour_Unit_dict= {"Jours":Jour_Unit[0] , "Unite":Jour_Unit[1] }
+    print(f"Jour_Unit_dict = {Jour_Unit_dict} ")
+
+    nb_jour=int(Jour_Unit_dict["Jours"])
+    Unit=Jour_Unit_dict["Unite"]
+ 
+    if Unit == "Minutes":
+        print(f" {nb_jour} jour  = {nb_jour*60} {Unit}")
+    elif Unit == "Secondes":   
+        print(f" {nb_jour} jour  = {nb_jour*60*60} {Unit}")
+    else:
+        print(f"Unite : {Unit} non prevu") 
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python dictionary.py
+----------------------------------------
+ Données de type Dictionary
+ Une sorte de Set KEY:VALUE
+ exemple  { "Jours":20 ,  "Unite":"heure" }
+ ....
+Entrer le nombre de jour et l unite exemple 20:heure :
+2:Minutes
+Jour_Unit : ['2', 'Minutes']
+Jour_Unit_dict = {'Jours': '2', 'Unite': 'Minutes'}
+ 2 jour  = 120 Minutes
+Entrer le nombre de jour et l unite exemple 20:heure :
+2:Secondes
+Jour_Unit : ['2', 'Secondes']
+Jour_Unit_dict = {'Jours': '2', 'Unite': 'Secondes'}
+ 2 jour  = 7200 Secondes
+Entrer le nombre de jour et l unite exemple 20:heure :
+2:NanoSeconde
+Jour_Unit : ['2', 'NanoSeconde']
+Jour_Unit_dict = {'Jours': '2', 'Unite': 'NanoSeconde'}
+Unite : NanoSeconde non prevu
+Entrer le nombre de jour et l unite exemple 20:heure :
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+"""
+ Fichier FormMain avec import fonctions 
+ contenues dans FormModule
+ La fonction doit passer la variable nb_jour au Module 
+ 
+ import FormModule 
+    => Appel par FormModule.check_execute(nb_jour)
+
+ from FormModule import check_execute
+    => Appel par check_execute(nb_jour)
+
+ from FormModule import *
+    => interessant car on peut appeler tous les objets
+       du module sans les préfixer nu nom du module a chaque fois
+
+"""
+
+#import FormModule
+# ou pour importer qu un fonction 
+from FormModule import check_execute,Input_message
+    
+valeur_entree = "Debut"
+while valeur_entree != "exit":
+    valeur_entree = input(Input_message)
+    for nb_jour in valeur_entree.split(","):
+        print(f"Traitement de {nb_jour} ")
+        check_execute(nb_jour) 
+
+
+"""
+  Module Formation avec fonction 
+  Dans la definition de la fonction , on ajoute le parametre nb_jour 
+  qui a été ajouté aussi dans le FormMain.py
+
+  La variable Nb_Secondes_Par_Jour utilisée dans le module est donc déclarée dans le module 
+
+"""
+Nb_Secondes_Par_Jour= 24 * 60*60
+Input_message="Entrer les nombre de jour séparés par une virgule : \n"
+
+def check_execute(nb_jour):
+    try:
+        valeur_entree_number = int(nb_jour) 
+        if valeur_entree_number > 0:
+            print(f"{valeur_entree_number} jour(s) : {valeur_entree_number * Nb_Secondes_Par_Jour} seconde(s)" ) 
+            print("-"*30)
+        elif valeur_entree_number == 0:
+            print(f"L entree ne doit pas être nulle : {valeur_entree_number} invalide entrée ")
+    except ValueError:
+        print(f"L entree doit être un entier positif ")
+
+
+
+
+
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python FormMain.py
+Entrer les nombre de jour séparés par une virgule :
+1,2,3,4,5,6,7,8,9
+Traitement de 1
+1 jour(s) : 86400 seconde(s)
+------------------------------
+Traitement de 2
+2 jour(s) : 172800 seconde(s)
+------------------------------
+Traitement de 3
+3 jour(s) : 259200 seconde(s)
+------------------------------
+Traitement de 4
+4 jour(s) : 345600 seconde(s)
+------------------------------
+Traitement de 5
+5 jour(s) : 432000 seconde(s)
+------------------------------
+Traitement de 6
+6 jour(s) : 518400 seconde(s)
+------------------------------
+Traitement de 7
+7 jour(s) : 604800 seconde(s)
+------------------------------
+Traitement de 8
+8 jour(s) : 691200 seconde(s)
+------------------------------
+Traitement de 9
+9 jour(s) : 777600 seconde(s)
+------------------------------
+Entrer les nombre de jour séparés par une virgule :
+</PRE></TD> </TR>
+
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Les Modules   ")
+print(" Un Module un fichier python contenant des fonctions  ") 
+print(" Dans le fchier FormMain.py import FormModule   ") 
+"""
+ Fichier FormMain avec import fonctions 
+ contenues dans FormModule
+ La fonction doit passer la variable nb_jour au Module 
+ 
+ import FormModule 
+    => Appel par FormModule.check_execute(nb_jour)
+
+ from FormModule import check_execute
+    => Appel par check_execute(nb_jour)
+ 
+ from FormModule import check_execute, imput_message
+    => Appel par check_execute(nb_jour)
+
+ from FormModule import *
+    => interessant car on peut appeler tous les objets
+       du module sans les préfixer nu nom du module a chaque fois
+
+
+Utilisation Alias 
+ import FormModule as F
+    => Appel par F.check_execute(nb_jour)
+
+   
+"""
+</PRE> </TD>  <TD align=LEFT> <PRE>
+...
+</PRE></TD> </TR>
+
+
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Les Modules  Built In que l on peut importer dans PYTHON ")
+print(" Programme ModulesBuiltin.py  ") 
+print(" Doc module html : https://docs.python.org/3/library/html.html") 
+
+import os 
+import logging 
+import html 
+
+print(f"os.name = {os.name}") 
+
+logger = logging.getLogger("MAIN") 
+logger.error("Erreur dans mon application") 
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python ModulesBuiltin.py
+----------------------------------------
+ Les Modules  Built In que l on peut importer dans PYTHON
+ Programme ModulesBuiltin.py
+ Doc module html : https://docs.python.org/3/library/html.html
+os.name = nt
+Erreur dans mon application
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+""" 
+Programme deadline.py 
+  Saisir un objectif et une date limite pour cet objectif
+  En sortie : 
+      informer du nombre de jour qu il reste pour atteindre cet objectif
+""" 
+
+
+import datetime
+# pour voir la documentation sur le module 
+# https://docs.python.org/3/library/datetime.html 
+
+def interligne():
+    print("-"*60 + "\n")
+    
+interligne()    
+var_entree=input("Entrer un objectif et une date separe par :\n") 
+# exemple Apprendre Python:31.12.2021
+list_var_entree=var_entree.split(":") 
+objectif=list_var_entree[0] 
+dateobj=list_var_entree[1]
+
+# Convertion de dateobj de string DD.MM.YY en date
+# on aura le format 2021-12-12 00:00:00 et le type <class 'datetime.datetime'> 
+fmtdate_obj=datetime.datetime.strptime(dateobj,"%d.%m.%Y")
+
+"""
+On va maintenant calculer  combien de jours il nous reste jusqu' a la deadline 
+
+datetime.datetime.today()  : donne la date du jour 
+cela donne 2021-12-14 12:32:41.839814  pour le 14 décembre 2021 
+
+"""
+fmtdate_jour=datetime.datetime.today()
+fmtjours= fmtdate_obj - fmtdate_jour 
+# exemple fmtjours  : 16 days, 11:12:57.106096  
+# pas propre : on va extraire le nombre de jours avec la builtin fonction .days
+jours=fmtjours.days
+heures=int(fmtjours.total_seconds()/3600) 
+
+interligne()
+print(f"Pour atteindre votre objectif : {objectif} \n")
+print(f"\tIl vous reste : {jours} jours \n ") 
+print(f"\tIl vous reste : {heures} heures \n ") 
+interligne() 
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples>python deadline.py
+------------------------------------------------------------
+Entrer un objectif et une date separe par :
+Maitriser PYTHON3:16.12.2021
+------------------------------------------------------------
+Pour atteindre votre objectif : Maitriser PYTHON3
+	il vous reste : 1 jours
+	il vous reste : 34 heures
+------------------------------------------------------------
+
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+print("-"*40)
+print(" Les Modules externes    ")
+print(" ...  ") 
+print(" ...  ") 
+"""
+  Comment trouver le modules ? 
+  Comment les installer ? 
+  Package = une collections de Modules Python 
+		un package  inclut un __init__.py  file 
+  
+  PYPI : Python Package index    290 000 packages python
+  http://pypi.org/
+
+  	serach module like django numpy "aws api"  
+  
+  Cliquer sur Django 
+	pour installer :  pip install Django 
+   	puis l utiliser dans le code python : import django ...
+
+  PIP : Python Install Package installé de base azvec python
+  	pour desinstaller pip uninstall Django 
+   
+"""
+</PRE> </TD>  <TD align=LEFT> <PRE>
+Not  Available 
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+
+
+def interligne():
+    print("\n" + "-_"*20 +"\n")
+
+interligne() 
+
+"""
+print(" Automatisation avec PYTHON   ")
+print(" Projet : Travailler avec les SPREDSHEET EXCEL   ") 
+print(" Voir fichier Automatision.py pour les pré requis  ") 
+print(" fichier inventaire.xlsx avec onglet product-list" )
+"""
+import openpyxl 
+
+
+print(f"Lecture de sheet product_list dans  Inventaire2.xlsx ")
+inv_file=openpyxl.load_workbook("Inventaire2.xlsx")
+product_list=inv_file["product-list"]
+
+# Ex1
+products_per_supplier = {}
+
+# Ex2
+total_value_per_supplier = {}
+
+# Ex3
+products_under_10_inv = {} 
+
+""" Numero max_row 
+print(f"product_list.max_row = {product_list.max_row} " )
+print(f"range(75) pour la boucle de 2 à 75  : 1 = ligne entete ")
+print(f" product_list.max_row est exclusif  , on ajoute 1 pour avoir la derniere ligne")
+""" 
+interligne() 
+
+for product_row in range(2,product_list.max_row + 1):
+    supplier_name = product_list.cell(product_row, 4).value   # Ex1
+    inventory = product_list.cell(product_row, 2).value       # Ex2
+    price = product_list.cell(product_row, 3).value           # Ex2
+    product_num = product_list.cell(product_row, 1).value     # Ex3
+    inventory_price = product_list.cell(product_row,5)        # Ex4    
+
+    # Ex1 Calcul  product par supplier 
+    if supplier_name in  products_per_supplier:
+        products_per_supplier[supplier_name] += 1
+        #ou products_per_supplier.get(supplier_name) += 1
+        #print(f"lig {product_row} : {supplier_name}  {products_per_supplier[supplier_name]}")
+    else:
+        #print(f"lig {product_row} : Ajout dun nouveau supplier  products_per_supplier[{supplier_name}]")
+        products_per_supplier[supplier_name] = 1
+    
+    # Ex2 Calcul Valeur total inventaire par supplier 
+    # chaque ligne Inventory * Price 
+    if supplier_name in  total_value_per_supplier:
+        total_value_per_supplier[supplier_name] += inventory * price
+    else:
+        #total_value_per_supplier[supplier_name] = inventory * price 
+        total_value_per_supplier[supplier_name] = inventory * price 
+        
+    # Ex 3 recherche des produit dont l inventaire est inferieur a 10 
+    if inventory < 10:
+        products_under_10_inv[int(product_num)]= int(inventory)
+
+    #Ex 4 Calcul invertory * price par produit et ecrire colonne 5 
+    inventory_price.value = inventory * price 
+    #inv_file.save() # pour sauvegarder dans le meme fichier 
+    inv_file.save("Inventaire3.xlsx")
+    
+interligne()       
+print(f"Ex 1 Contenu products_per_supplier    :\n\t{products_per_supplier}")
+
+interligne()       
+print(f"Ex 2 Contenu total_value_per_supplier :\n\t{total_value_per_supplier}")
+
+interligne()       
+print(f"Ex 3 Contenu products_under_10_inv :\n\t{products_under_10_inv}")
+
+interligne()
+print(f"Ex 4 Nouveau fichier avec nouvelle colonne : Inventaire3.xlsx") 
+ 
+</PRE> </TD>  <TD align=LEFT> <PRE>
+D:\INDEX\PYTHON\Exemples\EXCEL>python Automatisation2.py
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+Lecture de sheet product_list dans  Inventaire2.xlsx
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+Ex 1 Contenu products_per_supplier    :
+        {'AAA Compagny': 11, 'BBB Compagny': 9, 'CCC Compagny': 5}
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+Ex 2 Contenu total_value_per_supplier :
+        {'AAA Compagny': 904365.2900000002, 'BBB Compagny': 295604.66, 'CCC Compagny': 7149637.299999999}
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+Ex 3 Contenu products_under_10_inv :
+        {23: 5, 24: 6, 25: 7}
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+Ex 4 Nouveau fichier avec nouvelle colonne : Inventaire3.xlsx
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+...
+</PRE> </TD>  <TD align=LEFT> <PRE>
+...
+</PRE></TD> </TR>
+
+<TR> <TD align=LEFT> <PRE> 
+...
+</PRE> </TD>  <TD align=LEFT> <PRE>
+...
+</PRE></TD> </TR>
+
+
+</TABLE>
+
+</BODY>
+
+</HTML>
